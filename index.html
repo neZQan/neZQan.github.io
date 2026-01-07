@@ -11,7 +11,7 @@
       background: #f3f4f6;
     }
 
-    /* ===== HEADER (พื้นหลังขยับ / GIF ได้) ===== */
+    /* ===== HEADER (พื้นหลังขยับ หรือ GIF ได้) ===== */
     .animated-header {
       text-align: center;
       color: white;
@@ -59,7 +59,6 @@
 
     /* ===== SECTION + ANIMATION (แบบ iPhone) ===== */
     section {
-      display: none;
       max-width: 900px;
       margin: 30px auto;
       background: white;
@@ -67,14 +66,16 @@
       border-radius: 15px;
 
       opacity: 0;
-      transform: translateX(40px);
-      transition: all 0.5s ease;
+      transform: translateX(60px);
+      pointer-events: none;
+
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     section.active {
-      display: block;
       opacity: 1;
       transform: translateX(0);
+      pointer-events: auto;
     }
 
     /* ===== IMAGE ===== */
@@ -131,9 +132,6 @@
       กลุ่มที่ 3 โดยเนื้อหาทั้งหมดจะถูกรวบรวมไว้ในเว็บไซต์นี้
     </p>
 
-    <img src="https://www.rittiya.ac.th/wp-content/uploads/2024/06/logo-rw.png"
-         alt="โลโก้โรงเรียน"
-         class="pic">
   </section>
 
   <!-- ===== ABOUT ===== -->
