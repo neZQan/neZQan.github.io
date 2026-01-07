@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>โครงงานโรงเรียน</title>
+  <title>โครงงาน STEM 02</title>
 
   <style>
     body {
@@ -11,13 +11,29 @@
       background: #f3f4f6;
     }
 
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 20px;
+    /* ===== HEADER (พื้นหลังขยับ / GIF ได้) ===== */
+    .animated-header {
       text-align: center;
+      color: white;
+      padding: 90px 20px;
+      background: linear-gradient(
+        -45deg,
+        #2563eb,
+        #9333ea,
+        #0ea5e9,
+        #22c55e
+      );
+      background-size: 400% 400%;
+      animation: gradientMove 14s ease infinite;
     }
 
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== NAV ===== */
     nav {
       display: flex;
       justify-content: center;
@@ -41,110 +57,147 @@
       background: #2563eb;
     }
 
+    /* ===== SECTION + ANIMATION (แบบ iPhone) ===== */
     section {
       display: none;
       max-width: 900px;
       margin: 30px auto;
       background: white;
-      padding: 25px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 15px;
+
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.5s ease;
     }
 
     section.active {
       display: block;
+      opacity: 1;
+      transform: translateX(0);
     }
-    
-    .animated-header {
-  position: relative;
-  overflow: hidden;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(
-    -45deg,
-    #2563eb,
-    #9333ea,
-    #0ea5e9,
-    #22c55e
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
-}
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    /* ===== IMAGE ===== */
+    .pic {
+      width: 320px;          /* 👈 ปรับขนาดรูปได้ตรงนี้ (px) */
+      border-radius: 12px;
+      display: block;
+      margin: 20px auto;
+    }
 
+    /* ===== CONTACT LAYOUT ===== */
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 30px;              /* ระยะห่างข้อความกับรูป (px) */
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 180px;           /* 👈 ขนาดรูปโปรไฟล์ (px) */
+      border-radius: 15px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
+
 <body>
 
-<header class="animated-header">
-  <h1>เว็บโครงงานโรงเรียน</h1>
-  <p>จัดทำโดย neZQan! (ณภัทร เหมมะลา 6)</p>
-</header>
+  <!-- ===== HEADER ===== -->
+  <header class="animated-header">
+    <h1>เว็บโครงงาน STEM 02 กลุ่ม 3</h1>
+    <p>จัดทำโดย neZQan (ณภัทร เหมมะลา)</p>
+  </header>
 
-<nav>
-  <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
-  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
-  <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
-  <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
-  <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
-</nav>
+  <!-- ===== NAV ===== -->
+  <nav>
+    <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
+    <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
+    <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
+    <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
+    <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
+  </nav>
 
-<section id="home" class="active">
-  <h2>ยินดีต้อนรับ</h2>
-  <p>เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของ STEM 02 กลุ่มที่ 3<br>โดยที่โครงงานจะแสดงอยู่ที่ website นี้ทั้งหมด(นี้คือครั้งแรกแหละ 555)</p>
-  
-    <img src=	https://www.rittiya.ac.th/wp-content/uploads/2024/06/logorw.png alt="รูปโครงงาน" class="pic">
-</section>
+  <!-- ===== HOME ===== -->
+  <section id="home" class="active">
+    <h2>ยินดีต้อนรับ</h2>
+    <p>
+      เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงาน STEM 02  
+      กลุ่มที่ 3 โดยเนื้อหาทั้งหมดจะถูกรวบรวมไว้ในเว็บไซต์นี้
+    </p>
 
-<section id="about">
-  <h2>เกี่ยวกับโครงงาน</h2>
-  <p>โครงงานนี้คือเกี่ยวกับการแปลงพลังงานไฟฟ้าจาก dynamo เข้าไปในโทรศัพท์เพื่อให้ทำการชาร์จได้โดยแค่บีบ</p>
-</section>
+    <img src="https://www.rittiya.ac.th/wp-content/uploads/2024/06/logo-rw.png"
+         alt="โลโก้โรงเรียน"
+         class="pic">
+  </section>
 
-<section id="process">
-  <h2>ขั้นตอนการดำเนินงาน</h2>
-  <ol>
-    <li>ศึกษาข้อมูล</li>
-    <li>วางแผน</li>
-    <li>ลงมือทำ</li>
-    <li>สรุปผล</li>
-  </ol>
-</section>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2>เกี่ยวกับโครงงาน</h2>
+    <p>
+      โครงงานนี้เกี่ยวกับการแปลงพลังงานไฟฟ้าจาก dynamo  
+      เพื่อชาร์จโทรศัพท์มือถือโดยใช้แรงบีบ
+    </p>
+  </section>
 
-<section id="result">
-  <h2>ผลลัพธ์ที่ได้</h2>
-  <p>Hello World</p>
-</section>
+  <!-- ===== PROCESS ===== -->
+  <section id="process">
+    <h2>ขั้นตอนการดำเนินงาน</h2>
+    <ol>
+      <li>ศึกษาข้อมูล</li>
+      <li>วางแผน</li>
+      <li>ลงมือทำ</li>
+      <li>สรุปผล</li>
+    </ol>
+  </section>
 
-<section id="contact">
-  <h2>ผู้จัดทำ</h2>
-  <p>ชื่อ: ณภัทร เหมมะลา (หรือ neZQan ในชุมชน github) <br>โรงเรียน: ritiyawannalai<br>ระดับการศึกษาอยู่ที่ มัธยมต้น ม.3 </p>
-    <img src="IMG_5903.JPG" alt="รูปภาพตัวเอง" class="pic">  
-</section>
+  <!-- ===== RESULT ===== -->
+  <section id="result">
+    <h2>ผลลัพธ์ที่ได้</h2>
+    <p>สามารถผลิตพลังงานไฟฟ้าเพื่อชาร์จอุปกรณ์ได้จริง</p>
+  </section>
 
-<script>
-  function openTab(tabId, element) {
-    const sections = document.querySelectorAll("section");
-    const buttons = document.querySelectorAll(".tab");
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>ผู้จัดทำ</h2>
 
-    sections.forEach(sec => sec.classList.remove("active"));
-    buttons.forEach(btn => btn.classList.remove("active"));
+    <div class="contact-box">
+      <div>
+        <p>
+          ชื่อ: ณภัทร เหมมะลา (neZQan)<br>
+          โรงเรียน: ฤทธิยะวรรณาลัย<br>
+          ระดับชั้น: ม.3
+        </p>
 
-    document.getElementById(tabId).classList.add("active");
-    element.classList.add("active");
-  }
-</script>
+        <a href="https://www.rittiya.ac.th/home" target="_blank">
+          หน้าเว็บไซต์โรงเรียน
+        </a>
+      </div>
+
+      <img src="IMG_5903.JPG"
+           alt="รูปภาพตัวเอง"
+           class="profile-pic">
+    </div>
+  </section>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    function openTab(tabId, element) {
+      const sections = document.querySelectorAll("section");
+      const buttons = document.querySelectorAll(".tab");
+
+      sections.forEach(sec => sec.classList.remove("active"));
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      document.getElementById(tabId).classList.add("active");
+      element.classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
