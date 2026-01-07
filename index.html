@@ -8,8 +8,24 @@
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background:#f2f2f2;
+  min-height:100vh;
+  background: linear-gradient(
+    -45deg,
+    #e0f2fe,
+    #f0f9ff,
+    #e0e7ff,
+    #fdf2f8
+  );
+  background-size: 400% 400%;
+  animation: bgMove 18s ease infinite;
 }
+
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* ===== NAV BAR ===== */
 .nav-bar{
@@ -45,9 +61,11 @@ body{
 /* ===== MAIN ===== */
 main{
   position:relative;
-  height:550px;
+  min-height: calc(100vh - 70px); /* เต็มจอ ลบ nav */
   overflow:hidden;
+  padding-top:40px;
 }
+
 
 /* ===== SECTION (iOS style) ===== */
 section{
@@ -86,11 +104,15 @@ section.exit-left{
 <body>
 
 <nav class="nav-bar">
-  <button class="tab active" onclick="openTab('home',this)">หน้าแรก</button>
-  <button class="tab" onclick="openTab('project',this)">โครงงาน</button>
-  <button class="tab" onclick="openTab('contact',this)">ผู้จัดทำ</button>
-  <div id="indicator"></div>
+  <div class="nav-indicator" id="indicator"></div>
+
+  <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
+  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
+  <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
+  <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
+  <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
 </nav>
+
 
 <main>
 
@@ -102,7 +124,18 @@ section.exit-left{
     โดยมีการออกแบบให้ใช้งานง่ายและดูทันสมัย
   </p>
 </section>
+  
+<section id="about">
+  <h2>เกี่ยวกับโครงงาน</h2>
+  <p>อธิบายโครงงาน</p>
+</section>
 
+<section id="about">
+  <h2>เกี่ยวกับโครงงาน</h2>
+  <p>อธิบายโครงงาน</p>
+</section>
+
+  
 <section id="project">
   <h2>โครงงาน</h2>
   <p>
@@ -112,6 +145,11 @@ section.exit-left{
   </p>
 </section>
 
+  <section id="result">
+  <h2>ผลลัพธ์</h2>
+  <p>ผลที่ได้จากโครงงาน</p>
+</section>
+  
 <section id="contact">
   <h2>ผู้จัดทำ</h2>
   <p>
