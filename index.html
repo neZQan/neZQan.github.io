@@ -58,38 +58,34 @@
     }
 
     /* ===== SECTION + ANIMATION (แบบ iPhone) ===== */
-main {
-  position: relative;
-  overflow: hidden;
-  height: 520px;   /* ความสูงพื้นที่แสดงผล */
-}
 
 section {
-  position: absolute;   /* ⭐ ตัวนี้แหละหัวใจ */
-  top: 0;
+  position: absolute;
+  top: 50%;
   left: 100%;
-  width: 100%;
+  transform: translate(-50%, -50%);
 
+  width: 100%;
   max-width: 900px;
-  margin: 30px auto;
   background: white;
   padding: 30px;
   border-radius: 15px;
 
   opacity: 0;
-  transition: all 0.45s ease;
+  transition:
+    left 0.45s ease,
+    opacity 0.35s ease;
 }
 
 section.active {
-  left: 0;
+  left: 50%;
   opacity: 1;
 }
 
 section.exit-left {
-  left: -100%;
+  left: -50%;
   opacity: 0;
 }
-
 
     /* ===== IMAGE ===== */
     .pic {
