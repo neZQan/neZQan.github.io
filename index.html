@@ -53,13 +53,43 @@
     section.active {
       display: block;
     }
+    
+    .animated-header {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    -45deg,
+    #2563eb,
+    #9333ea,
+    #0ea5e9,
+    #22c55e
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
   </style>
 </head>
 <body>
 
-<header>
+<header class="animated-header">
   <h1>เว็บโครงงานโรงเรียน</h1>
-  <p>จัดทำโดย ฟรุ๊ตตี้</p>
+  <p>จัดทำโดย neZQan! (ณภัทร เหมมะลา 6)</p>
 </header>
 
 <nav>
@@ -72,12 +102,14 @@
 
 <section id="home" class="active">
   <h2>ยินดีต้อนรับ</h2>
-  <p>เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของโรงเรียน</p>
+  <p>เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของ STEM 02 กลุ่มที่ 3<br>โดยที่โครงงานจะแสดงอยู่ที่ website นี้ทั้งหมด(นี้คือครั้งแรกแหละ 555)</p>
+  
+    <img src=	https://www.rittiya.ac.th/wp-content/uploads/2024/06/logorw.png alt="รูปโครงงาน" class="pic">
 </section>
 
 <section id="about">
   <h2>เกี่ยวกับโครงงาน</h2>
-  <p>อธิบายแนวคิดและที่มาของโครงงาน</p>
+  <p>โครงงานนี้คือเกี่ยวกับการแปลงพลังงานไฟฟ้าจาก dynamo เข้าไปในโทรศัพท์เพื่อให้ทำการชาร์จได้โดยแค่บีบ</p>
 </section>
 
 <section id="process">
@@ -92,12 +124,13 @@
 
 <section id="result">
   <h2>ผลลัพธ์ที่ได้</h2>
-  <p>ผลที่ได้จากการทำโครงงาน</p>
+  <p>Hello World</p>
 </section>
 
 <section id="contact">
   <h2>ผู้จัดทำ</h2>
-  <p>ชื่อ: ฟรุ๊ตตี้<br>โรงเรียน: __________</p>
+  <p>ชื่อ: ณภัทร เหมมะลา (หรือ neZQan ในชุมชน github) <br>โรงเรียน: ritiyawannalai<br>ระดับการศึกษาอยู่ที่ มัธยมต้น ม.3 </p>
+    <img src="IMG_5903.JPG" alt="รูปโครงงาน" class="pic">  
 </section>
 
 <script>
