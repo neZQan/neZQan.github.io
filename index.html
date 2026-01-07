@@ -58,25 +58,38 @@
     }
 
     /* ===== SECTION + ANIMATION (แบบ iPhone) ===== */
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
+main {
+  position: relative;
+  overflow: hidden;
+  height: 520px;   /* ความสูงพื้นที่แสดงผล */
+}
 
-      opacity: 0;
-      transform: translateX(60px);
-      pointer-events: none;
+section {
+  position: absolute;   /* ⭐ ตัวนี้แหละหัวใจ */
+  top: 0;
+  left: 100%;
+  width: 100%;
 
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
 
-    section.active {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: auto;
-    }
+  opacity: 0;
+  transition: all 0.45s ease;
+}
+
+section.active {
+  left: 0;
+  opacity: 1;
+}
+
+section.exit-left {
+  left: -100%;
+  opacity: 0;
+}
+
 
     /* ===== IMAGE ===== */
     .pic {
@@ -104,6 +117,23 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: #111827;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 10px;
+  transition: all 0.35s ease;
+}
+
   </style>
 </head>
 
@@ -116,7 +146,10 @@
   </header>
 
   <!-- ===== NAV ===== -->
-  <nav>
+
+  <nav class="nav-bar">
+    <div class="nav-indicator" id="indicator"></div>
+
     <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
     <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
     <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
@@ -125,6 +158,7 @@
   </nav>
 
   <!-- ===== HOME ===== -->
+  <main>
   <section id="home" class="active">
     <h2>ยินดีต้อนรับ</h2>
     <p>
@@ -182,6 +216,8 @@
            class="profile-pic">
     </div>
   </section>
+</main>
+
 
   <!-- ===== SCRIPT ===== -->
   <script>
@@ -196,6 +232,46 @@
       element.classList.add("active");
     }
   </script>
+  
+  <script>
+let currentSection = document.querySelector("section.active");
+
+function openTab(tabId, element) {
+  const sections = document.querySelectorAll("section");
+  const buttons = document.querySelectorAll(".tab");
+  const indicator = document.getElementById("indicator");
+
+  if (currentSection) {
+    currentSection.classList.remove("active");
+    currentSection.classList.add("exit-left");
+  }
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  element.classList.add("active");
+
+  const next = document.getElementById(tabId);
+  next.classList.remove("exit-left");
+  next.classList.add("active");
+  currentSection = next;
+
+  const rect = element.getBoundingClientRect();
+  const parentRect = element.parentElement.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.left = (rect.left - parentRect.left) + "px";
+}
+
+window.onload = () => {
+  const activeBtn = document.querySelector(".tab.active");
+  const indicator = document.getElementById("indicator");
+  const rect = activeBtn.getBoundingClientRect();
+  const parentRect = activeBtn.parentElement.getBoundingClientRect();
+
+  indicator.style.width = rect.width + "px";
+  indicator.style.left = (rect.left - parentRect.left) + "px";
+};
+</script>
+
 
 </body>
 </html>
