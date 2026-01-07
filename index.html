@@ -1,273 +1,168 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>โครงงาน STEM 02</title>
+<meta charset="UTF-8">
+<title>เว็บโครงงานโรงเรียน</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f3f4f6;
-    }
-
-    /* ===== HEADER (พื้นหลังขยับ หรือ GIF ได้) ===== */
-    .animated-header {
-      text-align: center;
-      color: white;
-      padding: 90px 20px;
-      background: linear-gradient(
-        -45deg,
-        #2563eb,
-        #9333ea,
-        #0ea5e9,
-        #22c55e
-      );
-      background-size: 400% 400%;
-      animation: gradientMove 14s ease infinite;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* ===== NAV ===== */
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #111827;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      color: white;
-      padding: 15px 25px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    nav button:hover {
-      background: #374151;
-    }
-
-    nav button.active {
-      background: #2563eb;
-    }
-
-    /* ===== SECTION + ANIMATION (แบบ iPhone) ===== */
-
-section {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  max-width: 900px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-
-  opacity: 0;
-  transition:
-    left 0.45s ease,
-    opacity 0.35s ease;
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f2f2f2;
 }
 
-section.active {
-  left: 50%;
-  opacity: 1;
+/* ===== NAV BAR ===== */
+.nav-bar{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  background:white;
+  position:relative;
+  z-index:10;
 }
 
-section.exit-left {
-  left: -50%;
-  opacity: 0;
+.tab{
+  background:none;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  padding:10px 15px;
 }
 
-    /* ===== IMAGE ===== */
-    .pic {
-      width: 320px;          /* 👈 ปรับขนาดรูปได้ตรงนี้ (px) */
-      border-radius: 12px;
-      display: block;
-      margin: 20px auto;
-    }
-
-    /* ===== CONTACT LAYOUT ===== */
-    .contact-box {
-      display: flex;
-      align-items: center;
-      gap: 30px;              /* ระยะห่างข้อความกับรูป (px) */
-      flex-wrap: wrap;
-    }
-
-    .profile-pic {
-      width: 180px;           /* 👈 ขนาดรูปโปรไฟล์ (px) */
-      border-radius: 15px;
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .nav-bar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  background: #111827;
+.tab.active{
+  font-weight:bold;
 }
 
-.nav-indicator {
-  position: absolute;
-  bottom: 0;
-  height: 4px;
-  background: #2563eb;
-  border-radius: 10px;
-  transition: all 0.35s ease;
+#indicator{
+  position:absolute;
+  bottom:0;
+  height:3px;
+  background:#007aff;
+  transition:all .3s ease;
 }
 
-  </style>
+/* ===== MAIN ===== */
+main{
+  position:relative;
+  height:550px;
+  overflow:hidden;
+}
+
+/* ===== SECTION (iOS style) ===== */
+section{
+  position:absolute;
+  top:50%;
+  left:100%;
+  transform:translate(-50%,-50%);
+  width:100%;
+  max-width:900px;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  opacity:0;
+  transition:left .45s ease, opacity .35s ease;
+}
+
+section.active{
+  left:50%;
+  opacity:1;
+}
+
+section.exit-left{
+  left:-50%;
+  opacity:0;
+}
+
+/* ===== IMAGE ===== */
+.pic{
+  width:180px;
+  border-radius:12px;
+  margin-top:15px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="animated-header">
-    <h1>เว็บโครงงาน STEM 02 กลุ่ม 3</h1>
-    <p>จัดทำโดย neZQan (ณภัทร เหมมะลา)</p>
-  </header>
+<nav class="nav-bar">
+  <button class="tab active" onclick="openTab('home',this)">หน้าแรก</button>
+  <button class="tab" onclick="openTab('project',this)">โครงงาน</button>
+  <button class="tab" onclick="openTab('contact',this)">ผู้จัดทำ</button>
+  <div id="indicator"></div>
+</nav>
 
-  <!-- ===== NAV ===== -->
+<main>
 
-  <nav class="nav-bar">
-    <div class="nav-indicator" id="indicator"></div>
+<section id="home" class="active">
+  <h2>เว็บโครงงานโรงเรียน</h2>
+  <p>
+    เว็บไซต์นี้จัดทำขึ้นเพื่อใช้แสดงข้อมูลโครงงานของโรงเรียน<br>
+    ใช้สำหรับนำเสนอแนวคิด วัตถุประสงค์ และผลการดำเนินงาน<br>
+    โดยมีการออกแบบให้ใช้งานง่ายและดูทันสมัย
+  </p>
+</section>
 
-    <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
-    <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
-    <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
-    <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
-    <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
-  </nav>
+<section id="project">
+  <h2>โครงงาน</h2>
+  <p>
+    โครงงานนี้เป็นส่วนหนึ่งของการเรียนรู้ในระดับมัธยมศึกษาตอนต้น<br>
+    มุ่งเน้นให้นักเรียนได้ฝึกทักษะการคิด วิเคราะห์ และการใช้เทคโนโลยี<br>
+    รวมถึงการนำเสนอผลงานผ่านเว็บไซต์
+  </p>
+</section>
 
-  <!-- ===== HOME ===== -->
-  <main>
-  <section id="home" class="active">
-    <h2>ยินดีต้อนรับ</h2>
-    <p>
-      เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงาน STEM 02  
-      กลุ่มที่ 3 โดยเนื้อหาทั้งหมดจะถูกรวบรวมไว้ในเว็บไซต์นี้
-    </p>
+<section id="contact">
+  <h2>ผู้จัดทำ</h2>
+  <p>
+    ชื่อ: ณภัทร เหมมะลา (neZQan)<br>
+    โรงเรียน: โรงเรียนฤทธิยะวรรณาลัย (Rittiyawannalai School)<br>
+    ระดับชั้น: มัธยมศึกษาปีที่ 3
+  </p>
+  <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+</section>
 
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <h2>เกี่ยวกับโครงงาน</h2>
-    <p>
-      โครงงานนี้เกี่ยวกับการแปลงพลังงานไฟฟ้าจาก dynamo  
-      เพื่อชาร์จโทรศัพท์มือถือโดยใช้แรงบีบ
-    </p>
-  </section>
-
-  <!-- ===== PROCESS ===== -->
-  <section id="process">
-    <h2>ขั้นตอนการดำเนินงาน</h2>
-    <ol>
-      <li>ศึกษาข้อมูล</li>
-      <li>วางแผน</li>
-      <li>ลงมือทำ</li>
-      <li>สรุปผล</li>
-    </ol>
-  </section>
-
-  <!-- ===== RESULT ===== -->
-  <section id="result">
-    <h2>ผลลัพธ์ที่ได้</h2>
-    <p>สามารถผลิตพลังงานไฟฟ้าเพื่อชาร์จอุปกรณ์ได้จริง</p>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <h2>ผู้จัดทำ</h2>
-
-    <div class="contact-box">
-      <div>
-        <p>
-          ชื่อ: ณภัทร เหมมะลา (neZQan)<br>
-          โรงเรียน: ฤทธิยะวรรณาลัย<br>
-          ระดับชั้น: ม.3
-        </p>
-
-        <a href="https://www.rittiya.ac.th/home" target="_blank">
-          หน้าเว็บไซต์โรงเรียน
-        </a>
-      </div>
-
-      <img src="IMG_5903.JPG"
-           alt="รูปภาพตัวเอง"
-           class="profile-pic">
-    </div>
-  </section>
 </main>
 
-
-  <!-- ===== SCRIPT ===== -->
-  <script>
-    function openTab(tabId, element) {
-      const sections = document.querySelectorAll("section");
-      const buttons = document.querySelectorAll(".tab");
-
-      sections.forEach(sec => sec.classList.remove("active"));
-      buttons.forEach(btn => btn.classList.remove("active"));
-
-      document.getElementById(tabId).classList.add("active");
-      element.classList.add("active");
-    }
-  </script>
-  
-  <script>
+<script>
 let currentSection = document.querySelector("section.active");
 
-function openTab(tabId, element) {
-  const sections = document.querySelectorAll("section");
-  const buttons = document.querySelectorAll(".tab");
+function openTab(tabId, element){
+  const tabs = document.querySelectorAll(".tab");
   const indicator = document.getElementById("indicator");
 
-  if (currentSection) {
+  if(currentSection){
     currentSection.classList.remove("active");
     currentSection.classList.add("exit-left");
   }
 
-  buttons.forEach(btn => btn.classList.remove("active"));
+  tabs.forEach(t => t.classList.remove("active"));
   element.classList.add("active");
 
   const next = document.getElementById(tabId);
   next.classList.remove("exit-left");
-  next.classList.add("active");
+
+  setTimeout(() => {
+    next.classList.add("active");
+  }, 50);
+
   currentSection = next;
 
   const rect = element.getBoundingClientRect();
-  const parentRect = element.parentElement.getBoundingClientRect();
-
+  const parent = element.parentElement.getBoundingClientRect();
   indicator.style.width = rect.width + "px";
-  indicator.style.left = (rect.left - parentRect.left) + "px";
+  indicator.style.left = (rect.left - parent.left) + "px";
 }
 
 window.onload = () => {
-  const activeBtn = document.querySelector(".tab.active");
+  const activeTab = document.querySelector(".tab.active");
   const indicator = document.getElementById("indicator");
-  const rect = activeBtn.getBoundingClientRect();
-  const parentRect = activeBtn.parentElement.getBoundingClientRect();
-
+  const rect = activeTab.getBoundingClientRect();
+  const parent = activeTab.parentElement.getBoundingClientRect();
   indicator.style.width = rect.width + "px";
-  indicator.style.left = (rect.left - parentRect.left) + "px";
+  indicator.style.left = (rect.left - parent.left) + "px";
 };
 </script>
-
 
 </body>
 </html>
