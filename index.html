@@ -71,25 +71,24 @@ main{
 section{
   position:absolute;
   top:50%;
-  left:100%;
+  left:50%;
   transform:translate(-50%,-50%);
+
   width:100%;
   max-width:900px;
   background:white;
-  padding:30px;
-  border-radius:15px;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+
   opacity:0;
-  transition:left .45s ease, opacity .35s ease;
+  pointer-events:none;
+  transition: opacity 0.35s ease;
 }
 
 section.active{
-  left:50%;
   opacity:1;
-}
-
-section.exit-left{
-  left:-50%;
-  opacity:0;
+  pointer-events:auto;
 }
 
 /* ===== IMAGE ===== */
@@ -163,43 +162,27 @@ section.exit-left{
 </main>
 
 <script>
+<script>
 let currentSection = document.querySelector("section.active");
 
 function openTab(tabId, element){
   const tabs = document.querySelectorAll(".tab");
-  const indicator = document.getElementById("indicator");
 
+  // ซ่อน section เก่า
   if(currentSection){
     currentSection.classList.remove("active");
-    currentSection.classList.add("exit-left");
   }
 
+  // เปลี่ยน tab active
   tabs.forEach(t => t.classList.remove("active"));
   element.classList.add("active");
 
+  // แสดง section ใหม่
   const next = document.getElementById(tabId);
-  next.classList.remove("exit-left");
-
-  setTimeout(() => {
-    next.classList.add("active");
-  }, 50);
-
+  next.classList.add("active");
   currentSection = next;
-
-  const rect = element.getBoundingClientRect();
-  const parent = element.parentElement.getBoundingClientRect();
-  indicator.style.width = rect.width + "px";
-  indicator.style.left = (rect.left - parent.left) + "px";
 }
-
-window.onload = () => {
-  const activeTab = document.querySelector(".tab.active");
-  const indicator = document.getElementById("indicator");
-  const rect = activeTab.getBoundingClientRect();
-  const parent = activeTab.parentElement.getBoundingClientRect();
-  indicator.style.width = rect.width + "px";
-  indicator.style.left = (rect.left - parent.left) + "px";
-};
+</script>
 </script>
 
 </body>
