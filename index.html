@@ -16,7 +16,7 @@
       background: #f3f4f6;
     }
 
-    .animated-header {
+.animated-header {
       position: relative;
       overflow: hidden;
       color: white;
@@ -24,31 +24,39 @@
       padding: 80px 20px;
       background: linear-gradient(
         -45deg,
-        #2563eb,
-        #9333ea,
-        #0ea5e9,
-        #22c55e
+        #ff0000,
+        #00ff00,
+        #0000ff,
+        #ff0000
       );
       background-size: 400% 400%;
-      animation: gradientMove 7s ease infinite;
+      animation: rgbFire 4s ease infinite;
     }
 
     .animated-header h1 {
       font-size: 48px;
       margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     .animated-header p {
       font-size: 18px;
       opacity: 0.9;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    @keyframes gradientMove {
+    @keyframes rgbFire {
       0% {
         background-position: 0% 50%;
       }
-      50% {
+      25% {
         background-position: 100% 50%;
+      }
+      50% {
+        background-position: 100% 0%;
+      }
+      75% {
+        background-position: 0% 100%;
       }
       100% {
         background-position: 0% 50%;
@@ -65,7 +73,7 @@
       z-index: 100;
     }
 
-    nav button {
+        nav button {
       background: none;
       border: none;
       color: #374151;
@@ -75,17 +83,35 @@
       font-weight: 500;
       transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
+      position: relative;
     }
 
     nav button:hover {
       color: #2563eb;
       background: #f9fafb;
+      transform: translateY(-2px);
     }
 
     nav button.active {
       color: #2563eb;
       border-bottom-color: #2563eb;
+      animation: activeTab 0.5s ease;
     }
+
+    @keyframes activeTab {
+      0% {
+        border-bottom-color: transparent;
+        transform: scaleX(0);
+      }
+      50% {
+        transform: scaleX(1.1);
+      }
+      100% {
+        border-bottom-color: #2563eb;
+        transform: scaleX(1);
+      }
+    }
+
 
     section {
       display: none;
