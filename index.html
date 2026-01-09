@@ -2,26 +2,30 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>โครงงานโรงเรียน</title>
+  <title>โครงงาน stem02_3</title>
 
   <style>
+    /* ===== รีเซ็ตค่าเริ่มต้น ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* ===== สไตล์พื้นฐานของหน้า ===== */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f3f4f6;
     }
 
-.animated-header {
+    /* ===== สไตล์ Header ที่มี Animation ไฟ RGB ===== */
+    .animated-header {
       position: relative;
       overflow: hidden;
       color: white;
       text-align: center;
       padding: 80px 20px;
+      /* gradient สีแดง เขียว น้ำเงิน */
       background: linear-gradient(
         -45deg,
         #ff0000,
@@ -30,21 +34,25 @@
         #ff0000
       );
       background-size: 400% 400%;
-      animation: rgbFire 4s ease infinite;
+      animation: rgbFire 17s ease infinite;
     }
 
+    /* ===== สไตล์หัวข้อ Header ===== */
     .animated-header h1 {
       font-size: 48px;
       margin-bottom: 10px;
+      /* เพิ่มเงาให้ตัวอักษรชัดขึ้น */
       text-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
+    /* ===== สไตล์ข้อความอธิบาย Header ===== */
     .animated-header p {
       font-size: 18px;
       opacity: 0.9;
       text-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
+    /* ===== Animation ไฟ RGB ที่หมุนวนไปทั้ง 4 ทิศทาง ===== */
     @keyframes rgbFire {
       0% {
         background-position: 0% 50%;
@@ -63,41 +71,50 @@
       }
     }
 
+    /* ===== สไตล์แถบ Navigation ===== */
     nav {
       display: flex;
       justify-content: center;
       background: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      /* ทำให้ nav ติดด้านบนเสมอ */
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-        nav button {
+    /* ===== สไตล์ปุ่ม Navigation ===== */
+    nav button {
       background: none;
       border: none;
-      color: #374151;
+      color: #2d3542;
       padding: 16px 24px;
       cursor: pointer;
       font-size: 16px;
       font-weight: 500;
+      /* ให้การเปลี่ยนแปลงนุ่มนวล */
       transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
       position: relative;
     }
 
+    /* ===== เอฟเฟกต์เมื่อ Hover ปุ่ม ===== */
     nav button:hover {
       color: #2563eb;
       background: #f9fafb;
+      /* ปุ่มลอยขึ้นเล็กน้อย */
       transform: translateY(-2px);
     }
 
+    /* ===== สไตล์ปุ่มที่ถูกเลือก ===== */
     nav button.active {
       color: #2563eb;
       border-bottom-color: #2563eb;
+      /* เรียก animation สำหรับปุ่มที่ถูกเลือก */
       animation: activeTab 0.5s ease;
     }
 
+    /* ===== Animation สำหรับปุ่ม Navigation ที่ถูกกด ===== */
     @keyframes activeTab {
       0% {
         border-bottom-color: transparent;
@@ -112,7 +129,7 @@
       }
     }
 
-
+    /* ===== สไตล์เนื้อหา Section ===== */
     section {
       display: none;
       max-width: 900px;
@@ -121,13 +138,16 @@
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      /* เรียก animation สไลด์เข้า */
       animation: slideIn 0.5s ease;
     }
 
+    /* ===== แสดง Section ที่ถูกเลือก ===== */
     section.active {
       display: block;
     }
 
+    /* ===== Animation สไลด์เข้าของ Section ===== */
     @keyframes slideIn {
       from {
         opacity: 0;
@@ -139,18 +159,21 @@
       }
     }
 
+    /* ===== สไตล์หัวข้อ Section ===== */
     section h2 {
       color: #2563eb;
       margin-bottom: 20px;
       font-size: 32px;
     }
 
+    /* ===== สไตล์ข้อความใน Section ===== */
     section p {
       color: #4b5563;
       line-height: 1.8;
       margin-bottom: 15px;
     }
 
+    /* ===== สไตล์รายการลำดับขั้นตอน ===== */
     section ol {
       color: #4b5563;
       margin-left: 20px;
@@ -161,6 +184,7 @@
       margin-bottom: 10px;
     }
 
+    /* ===== สไตล์รูปภาพ ===== */
     .pic {
       max-width: 250px;
       height: auto;
@@ -174,11 +198,13 @@
 </head>
 <body>
 
+<!-- ===== Header หลักพร้อม Animation ไฟ RGB ===== -->
 <div class="animated-header">
   <h1>เว็บโครงงาน STEM 02_3</h1>
   <p>จัดทำโดย ฟรุ๊ตตี้</p>
 </div>
 
+<!-- ===== Navigation Menu ===== -->
 <nav>
   <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
   <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
@@ -187,17 +213,20 @@
   <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
 </nav>
 
+<!-- ===== Section หน้าแรก ===== -->
 <section id="home" class="active">
   <h2>ยินดีต้อนรับ</h2>
   <p>เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงาน STEM ของโรงเรียน ซึ่งประกอบไปด้วยการศึกษา การวางแผน และการลงมือปฏิบัติจริง</p>
 </section>
 
+<!-- ===== Section เกี่ยวกับโครงงาน ===== -->
 <section id="about">
   <h2>เกี่ยวกับโครงงาน</h2>
   <p>โครงงานนี้เป็นส่วนหนึ่งของหลักสูตร STEM ที่มีวัตถุประสงค์เพื่อพัฒนาทักษะด้านวิทยาศาสตร์ เทคโนโลยี วิศวกรรม และคณิตศาสตร์</p>
   <p>เราได้ศึกษาแนวคิดและออกแบบโครงงานให้สอดคล้องกับหลักการ STEM</p>
 </section>
 
+<!-- ===== Section ขั้นตอนการดำเนินงาน ===== -->
 <section id="process">
   <h2>ขั้นตอนการดำเนินงาน</h2>
   <ol>
@@ -208,27 +237,33 @@
   </ol>
 </section>
 
+<!-- ===== Section ผลลัพธ์ที่ได้ ===== -->
 <section id="result">
   <h2>ผลลัพธ์ที่ได้</h2>
   <p>จากการดำเนินงานโครงงาน STEM นี้ เราได้ได้รับประสบการณ์ที่มีค่า และสามารถสร้างสิ่งที่มีประโยชน์</p>
   <p>ผลลัพธ์ของโครงงานได้รับการตรวจสอบและยืนยันโดยครูที่ปรึกษา</p>
 </section>
 
+<!-- ===== Section ผู้จัดทำ ===== -->
 <section id="contact">
   <h2>ผู้จัดทำ</h2>
-  <p><strong>ชื่อ:</strong> ฟรุ๊ตตี้</p>
-  <p><strong>โรงเรียน:</strong> __________ </p>
+  <p><strong>ชื่อ:</strong> ณภัทร เหมมะลา (หรือที่เรียกใน github คือ neZQan)</p>
+  <p><strong>โรงเรียน:</strong> โรงเรียนฤทธิยะวรรณาลัย </p>
   <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
 </section>
 
+<!-- ===== JavaScript สำหรับจัดการการเปลี่ยน Tab ===== -->
 <script>
+  // ฟังก์ชันสำหรับเปลี่ยน Section เมื่อกดปุ่ม Navigation
   function openTab(tabId, element) {
+    // หาทุก section และเอา active class ออก
     const sections = document.querySelectorAll("section");
     const buttons = document.querySelectorAll(".tab");
 
     sections.forEach(sec => sec.classList.remove("active"));
     buttons.forEach(btn => btn.classList.remove("active"));
 
+    // เพิ่ม active class ให้ section และปุ่มที่เลือก
     document.getElementById(tabId).classList.add("active");
     element.classList.add("active");
   }
