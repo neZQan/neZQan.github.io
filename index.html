@@ -159,6 +159,20 @@
       }
     }
 
+    /* ===== Animation glowtext font Header  ===== */
+
+        @keyframes glowText {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 40px rgba(255,255,255,0.8);
+        transform: scale(1.05);
+      }
+    }
+
+
     /* ===== สไตล์หัวข้อ Section ===== */
     section h2 {
       color: #2563eb;
@@ -198,10 +212,10 @@
 </head>
 <body>
 
-<!-- ===== Header หลักพร้อม Animation ไฟ RGB ===== -->
+<!-- ===== Header หลักพร้อม Animation ไฟพื้นหลัง ===== -->
 <div class="animated-header">
   <h1>เว็บโครงงาน STEM 02_3</h1>
-  <p>จัดทำโดย ฟรุ๊ตตี้</p>
+  <p>จัดทำโดย ณภัทร เหมมะลา (neZQan)</p>
 </div>
 
 <!-- ===== Navigation Menu ===== -->
