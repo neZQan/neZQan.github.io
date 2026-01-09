@@ -2,53 +2,116 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>Project โรงเรียนของฉัน</title>
+  <title>โครงงานโรงเรียน</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
-      padding: 0;
+      background: #f3f4f6;
     }
+
     header {
       background: #1f2937;
       color: white;
       padding: 20px;
       text-align: center;
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111827;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      background: #374151;
+    }
+
+    nav button.active {
+      background: #2563eb;
+    }
+
     section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      display: none;
+      max-width: 900px;
+      margin: 30px auto;
       background: white;
-      margin-top: 20px;
+      padding: 25px;
       border-radius: 10px;
+    }
+
+    section.active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>โครงงานโรงเรียน</h1>
+  <h1>เว็บโครงงานโรงเรียน</h1>
   <p>จัดทำโดย ฟรุ๊ตตี้</p>
 </header>
 
-<section>
-  <h2>เกี่ยวกับโครงงาน</h2>
-  <p>
-    เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของโรงเรียน
-    พร้อมอธิบายแนวคิด ขั้นตอน และผลลัพธ์ของโครงงาน
-  </p>
+<nav>
+  <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
+  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
+  <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
+  <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
+  <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
+</nav>
+
+<section id="home" class="active">
+  <h2>ยินดีต้อนรับ</h2>
+  <p>เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของโรงเรียน</p>
 </section>
 
-<section>
-  <h2>วัตถุประสงค์</h2>
-  <ul>
-    <li>เพื่อศึกษาความรู้จากการทำโครงงาน</li>
-    <li>เพื่อฝึกการทำงานเป็นระบบ</li>
-    <li>เพื่อพัฒนาทักษะด้านเทคโนโลยี</li>
-  </ul>
+<section id="about">
+  <h2>เกี่ยวกับโครงงาน</h2>
+  <p>อธิบายแนวคิดและที่มาของโครงงาน</p>
 </section>
+
+<section id="process">
+  <h2>ขั้นตอนการดำเนินงาน</h2>
+  <ol>
+    <li>ศึกษาข้อมูล</li>
+    <li>วางแผน</li>
+    <li>ลงมือทำ</li>
+    <li>สรุปผล</li>
+  </ol>
+</section>
+
+<section id="result">
+  <h2>ผลลัพธ์ที่ได้</h2>
+  <p>ผลที่ได้จากการทำโครงงาน</p>
+</section>
+
+<section id="contact">
+  <h2>ผู้จัดทำ</h2>
+  <p>ชื่อ: ฟรุ๊ตตี้<br>โรงเรียน: __________</p>
+</section>
+
+<script>
+  function openTab(tabId, element) {
+    const sections = document.querySelectorAll("section");
+    const buttons = document.querySelectorAll(".tab");
+
+    sections.forEach(sec => sec.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    element.classList.add("active");
+  }
+</script>
 
 </body>
 </html>
