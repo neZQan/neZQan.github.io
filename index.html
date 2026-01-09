@@ -31,7 +31,8 @@
         #00ffb3,
         #00eeff,
         #006eff,
-        #b700ff
+        #b700ff,
+        #ff00c8
       );
       background-size: 400% 400%;
       animation: rgbFire 17s ease infinite;
@@ -167,7 +168,7 @@
         transform: scale(1);
       }
       50% {
-        text-shadow: 0 0 40px rgba(255,255,255,0.8);
+        text-shadow: 0 0 40px rgba(0, 153, 255, 0.8);
         transform: scale(1.05);
       }
     }
@@ -210,7 +211,7 @@
 
     /* ===== สไตล์รูปภาพ ===== */
     .pic {
-      max-width: 300px;
+      max-width: 250px;
       height: auto;
       border-radius: 10px;
       margin-top: 20px;
@@ -235,6 +236,7 @@
   <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
   <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
   <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
+  <button class="tab" onclick="openTab('Update', this)">รายการ Update website</button>
 </nav>
 
 <!-- ===== Section หน้าแรก ===== -->
@@ -282,7 +284,15 @@
 
     <!-- รูปภาพทางขวา -->
     <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+
   </div>
+</section>
+
+<!-- ===== Section รายการ Update website ===== -->
+<section id="Update">
+  <h2>รายการ Update website!</h2>
+  <p>รายการ Update website</p>
+  <p>coming soon kub!</p>
 </section>
 
 <!-- ===== JavaScript สำหรับจัดการการเปลี่ยน Tab ===== -->
