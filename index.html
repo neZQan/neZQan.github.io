@@ -18,7 +18,7 @@
       background: #f3f4f6;
     }
 
-    /* ===== สไตล์ Header ที่มี Animation ไฟ RGB ===== */
+    /* ===== สไตล์ Header ที่มี Animation ไฟแบบปรับได้ ===== */
     .animated-header {
       position: relative;
       overflow: hidden;
@@ -28,10 +28,10 @@
       /* gradient สีแดง เขียว น้ำเงิน */
       background: linear-gradient(
         -45deg,
-        #ff0000,
-        #00ff00,
-        #0000ff,
-        #ff0000
+        #00ffb3,
+        #00eeff,
+        #006eff,
+        #b700ff
       );
       background-size: 400% 400%;
       animation: rgbFire 17s ease infinite;
@@ -247,9 +247,17 @@
 <!-- ===== Section ผู้จัดทำ ===== -->
 <section id="contact">
   <h2>ผู้จัดทำ</h2>
-  <p><strong>ชื่อ:</strong> ณภัทร เหมมะลา (หรือที่เรียกใน github คือ neZQan)</p>
-  <p><strong>โรงเรียน:</strong> โรงเรียนฤทธิยะวรรณาลัย </p>
-  <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+  
+  <div class="contact-container">
+    <!-- ข้อมูลทางซ้าย -->
+    <div class="contact-info">
+      <p><strong>ชื่อ:</strong> ณภัทร เหมมะลา (หรือที่เรียกใน github คือ neZQan)</p>
+      <p><strong>โรงเรียน:</strong> โรงเรียนฤทธิยะวรรณาลัย</p>
+    </div>
+
+    <!-- รูปภาพทางขวา -->
+    <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+  </div>
 </section>
 
 <!-- ===== JavaScript สำหรับจัดการการเปลี่ยน Tab ===== -->
