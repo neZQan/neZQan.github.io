@@ -1,158 +1,54 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<title>เว็บโครงงานโรงเรียน</title>
-
-<style>
-/* ===== BACKGROUND (Google Sites feel) ===== */
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  min-height:100vh;
-  background: linear-gradient(
-    -45deg,
-    #e0f2fe,
-    #f0f9ff,
-    #e0e7ff,
-    #fdf2f8
-  );
-  background-size: 400% 400%;
-  animation: bgMove 18s ease infinite;
-}
-
-@keyframes bgMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-/* ===== NAV ===== */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:15px;
-  background:white;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-button{
-  background:none;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
-  padding:8px 12px;
-}
-
-button.active{
-  font-weight:bold;
-  border-bottom:3px solid #1a73e8;
-}
-
-/* ===== MAIN ===== */
-main{
-  padding:60px 20px;
-  display:flex;
-  justify-content:center;
-}
-
-/* ===== SECTION (Fade only) ===== */
-section{
-  max-width:900px;
-  width:100%;
-  background:white;
-  padding:40px;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-  display:none;
-  opacity:0;
-  animation: fadeIn .4s ease forwards;
-}
-
-section.active{
-  display:block;
-}
-
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-/* ===== IMAGE ===== */
-.pic{
-  width:180px;
-  border-radius:12px;
-  margin-top:15px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Project โรงเรียนของฉัน</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
-  <button class="active" onclick="openTab('home',this)">หน้าแรก</button>
-  <button onclick="openTab('about',this)">เกี่ยวกับโครงงาน</button>
-  <button onclick="openTab('process',this)">ขั้นตอน</button>
-  <button onclick="openTab('result',this)">ผลลัพธ์</button>
-  <button onclick="openTab('contact',this)">ผู้จัดทำ</button>
-</nav>
+<header>
+  <h1>โครงงานโรงเรียน</h1>
+  <p>จัดทำโดย ฟรุ๊ตตี้</p>
+</header>
 
-<main>
-
-<section id="home" class="active">
-  <h2>เว็บโครงงานโรงเรียน</h2>
-  <p>
-    เว็บไซต์นี้จัดทำขึ้นเพื่อใช้แสดงข้อมูลโครงงานของโรงเรียน<br>
-    ใช้สำหรับนำเสนอแนวคิด วัตถุประสงค์ และผลการดำเนินงาน
-  </p>
-</section>
-
-<section id="about">
+<section>
   <h2>เกี่ยวกับโครงงาน</h2>
-  <p>อธิบายที่มาและความสำคัญของโครงงาน</p>
-</section>
-
-<section id="process">
-  <h2>ขั้นตอน</h2>
-  <p>อธิบายขั้นตอนการทำงานของโครงงาน</p>
-</section>
-
-<section id="result">
-  <h2>ผลลัพธ์</h2>
-  <p>ผลลัพธ์และสิ่งที่ได้จากการทำโครงงาน</p>
-</section>
-
-<section id="contact">
-  <h2>ผู้จัดทำ</h2>
   <p>
-    ชื่อ: ณภัทร เหมมะลา (neZQan)<br>
-    โรงเรียนฤทธิยะวรรณาลัย<br>
-    ระดับชั้น ม.3
+    เว็บไซต์นี้จัดทำขึ้นเพื่อแสดงโครงงานของโรงเรียน
+    พร้อมอธิบายแนวคิด ขั้นตอน และผลลัพธ์ของโครงงาน
   </p>
-  <img src="IMG_5903.JPG" class="pic">
 </section>
 
-</main>
-
-<script>
-function openTab(id, btn){
-  document.querySelectorAll("section").forEach(s=>{
-    s.classList.remove("active");
-    s.style.display="none";
-  });
-
-  document.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
-
-  const target=document.getElementById(id);
-  target.style.display="block";
-  target.classList.add("active");
-  btn.classList.add("active");
-}
-</script>
+<section>
+  <h2>วัตถุประสงค์</h2>
+  <ul>
+    <li>เพื่อศึกษาความรู้จากการทำโครงงาน</li>
+    <li>เพื่อฝึกการทำงานเป็นระบบ</li>
+    <li>เพื่อพัฒนาทักษะด้านเทคโนโลยี</li>
+  </ul>
+</section>
 
 </body>
 </html>
