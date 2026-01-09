@@ -5,6 +5,7 @@
 <title>เว็บโครงงานโรงเรียน</title>
 
 <style>
+/* ===== BACKGROUND (Google Sites feel) ===== */
 body{
   margin:0;
   font-family: Arial, sans-serif;
@@ -20,75 +21,65 @@ body{
   animation: bgMove 18s ease infinite;
 }
 
-@keyframes bgMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
-
-/* ===== NAV BAR ===== */
-.nav-bar{
+/* ===== NAV ===== */
+nav{
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:20px;
   padding:15px;
   background:white;
-  position:relative;
+  position:sticky;
+  top:0;
   z-index:10;
 }
 
-.tab{
+button{
   background:none;
   border:none;
   font-size:16px;
   cursor:pointer;
-  padding:10px 15px;
+  padding:8px 12px;
 }
 
-.tab.active{
+button.active{
   font-weight:bold;
-}
-
-#indicator{
-  position:absolute;
-  bottom:0;
-  height:3px;
-  background:#007aff;
-  transition:all .3s ease;
+  border-bottom:3px solid #1a73e8;
 }
 
 /* ===== MAIN ===== */
 main{
-  position:relative;
-  min-height: calc(100vh - 70px); /* เต็มจอ ลบ nav */
-  overflow:visible; 
-  padding-top:40px;
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
 }
 
-
-/* ===== SECTION (iOS style) ===== */
+/* ===== SECTION (Fade only) ===== */
 section{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-
-  width:100%;
   max-width:900px;
+  width:100%;
   background:white;
   padding:40px;
-  border-radius:18px;
+  border-radius:16px;
   box-shadow:0 20px 40px rgba(0,0,0,.12);
 
+  display:none;
   opacity:0;
-  pointer-events:none;
-  transition: opacity 0.35s ease;
+  animation: fadeIn .4s ease forwards;
 }
 
 section.active{
-  opacity:1;
-  pointer-events:auto;
+  display:block;
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
 }
 
 /* ===== IMAGE ===== */
@@ -102,16 +93,13 @@ section.active{
 
 <body>
 
-<nav class="nav-bar">
-  <div class="nav-indicator" id="indicator"></div>
-
-  <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
-  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน</button>
-  <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
-  <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
-  <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำ</button>
+<nav>
+  <button class="active" onclick="openTab('home',this)">หน้าแรก</button>
+  <button onclick="openTab('about',this)">เกี่ยวกับโครงงาน</button>
+  <button onclick="openTab('process',this)">ขั้นตอน</button>
+  <button onclick="openTab('result',this)">ผลลัพธ์</button>
+  <button onclick="openTab('contact',this)">ผู้จัดทำ</button>
 </nav>
-
 
 <main>
 
@@ -119,76 +107,52 @@ section.active{
   <h2>เว็บโครงงานโรงเรียน</h2>
   <p>
     เว็บไซต์นี้จัดทำขึ้นเพื่อใช้แสดงข้อมูลโครงงานของโรงเรียน<br>
-    ใช้สำหรับนำเสนอแนวคิด วัตถุประสงค์ และผลการดำเนินงาน<br>
-    โดยมีการออกแบบให้ใช้งานง่ายและดูทันสมัย
+    ใช้สำหรับนำเสนอแนวคิด วัตถุประสงค์ และผลการดำเนินงาน
   </p>
 </section>
-  
+
 <section id="about">
   <h2>เกี่ยวกับโครงงาน</h2>
-  <p>อธิบายโครงงาน</p>
+  <p>อธิบายที่มาและความสำคัญของโครงงาน</p>
 </section>
 
 <section id="process">
   <h2>ขั้นตอน</h2>
-  <p>ขั้นตอนการทำงาน</p>
+  <p>อธิบายขั้นตอนการทำงานของโครงงาน</p>
 </section>
 
-  
-<section id="project">
-  <h2>โครงงาน</h2>
-  <p>
-    โครงงานนี้เป็นส่วนหนึ่งของการเรียนรู้ในระดับมัธยมศึกษาตอนต้น<br>
-    มุ่งเน้นให้นักเรียนได้ฝึกทักษะการคิด วิเคราะห์ และการใช้เทคโนโลยี<br>
-    รวมถึงการนำเสนอผลงานผ่านเว็บไซต์
-  </p>
-</section>
-
-  <section id="result">
+<section id="result">
   <h2>ผลลัพธ์</h2>
-  <p>ผลที่ได้จากโครงงาน</p>
+  <p>ผลลัพธ์และสิ่งที่ได้จากการทำโครงงาน</p>
 </section>
-  
+
 <section id="contact">
   <h2>ผู้จัดทำ</h2>
   <p>
     ชื่อ: ณภัทร เหมมะลา (neZQan)<br>
-    โรงเรียน: โรงเรียนฤทธิยะวรรณาลัย (Rittiyawannalai School)<br>
-    ระดับชั้น: มัธยมศึกษาปีที่ 3
+    โรงเรียนฤทธิยะวรรณาลัย<br>
+    ระดับชั้น ม.3
   </p>
-  <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+  <img src="IMG_5903.JPG" class="pic">
 </section>
 
 </main>
 
-
 <script>
-let currentSection = document.querySelector("section.active");
+function openTab(id, btn){
+  document.querySelectorAll("section").forEach(s=>{
+    s.classList.remove("active");
+    s.style.display="none";
+  });
 
-function openTab(tabId, element){
-  const tabs = document.querySelectorAll(".tab");
+  document.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
 
-  // ถ้ากดแท็บเดิม ไม่ต้องทำอะไร
-  if(currentSection && currentSection.id === tabId) return;
-
-  // 1. fade out หน้าเก่า
-  if(currentSection){
-    currentSection.classList.remove("active");
-  }
-
-  // 2. เปลี่ยนสถานะปุ่ม
-  tabs.forEach(t => t.classList.remove("active"));
-  element.classList.add("active");
-
-  // 3. fade in หน้าใหม่ (หน่วงนิดนึง)
-  const next = document.getElementById(tabId);
-  setTimeout(() => {
-    next.classList.add("active");
-    currentSection = next;
-  }, 200); // 👈 ตัวนี้แหละหัวใจ
+  const target=document.getElementById(id);
+  target.style.display="block";
+  target.classList.add("active");
+  btn.classList.add("active");
 }
 </script>
-
 
 </body>
 </html>
