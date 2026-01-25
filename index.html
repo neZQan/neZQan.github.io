@@ -601,7 +601,6 @@
   // ป้องกันการคลิกขวา
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    alert('⚠️ ห้ามคลิกขวา! กรุณาเคารพผลงานของผู้จัดทำ');
   });
 
   // ป้องกัน keyboard shortcuts
@@ -612,7 +611,6 @@
         (e.ctrlKey && e.key === 'u') ||
         (e.ctrlKey && e.key === 's')) {
       e.preventDefault();
-      alert('⚠️ ฟังก์ชันนี้ถูกปิดการใช้งาน!');
     }
   });
 
@@ -623,7 +621,6 @@
 
   document.addEventListener('copy', function(e) {
     e.preventDefault();
-    alert('⚠️ ห้ามคัดลอก! กรุณาเคารพผลงานของผู้จัดทำ');
   });
 </script>
 
