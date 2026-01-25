@@ -406,27 +406,7 @@
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">25 มกราคม 2026</span>
-        <span class="changelog-title">เพิ่มลิงก์ Instagram ของสมาชิกทีม</span>
-        <span class="changelog-arrow">▼</span>
-      </div>
-      <div class="changelog-content">
-        <div class="changelog-details">
-          <p><strong>สิ่งที่เพิ่มเข้ามา:</strong></p>
-          <ul>
-            <li>เพิ่มลิงก์ Instagram สำหรับหัวหน้างาน (nexqan)</li>
-            <li>เพิ่มลิงก์ Instagram สำหรับสมาชิกที่ 2 (t_eatremiyamura)</li>
-            <li>เพิ่มลิงก์ Instagram สำหรับสมาชิกที่ 3 (basicbeingbasic)</li>
-            <li>แต่ละลิงก์อยู่หลังชื่อเพื่อให้ติดต่อได้ง่ายขึ้น</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Update Item 2 -->
-    <div class="changelog-item" onclick="toggleChangelog(this)">
-      <div class="changelog-header">
-        <span class="changelog-date">25 มกราคม 2026</span>
-        <span class="changelog-title">แก้ไขเนื้อหาโครงงาน Dynamo → Power Bank</span>
+        <span class="changelog-title">แก้ไขเนื้อหาโครงงาน และเพิ่มลิงก์ IG ทีม</span>
         <span class="changelog-arrow">▼</span>
       </div>
       <div class="changelog-content">
@@ -436,14 +416,16 @@
             <li>อัปเดตเนื้อหาโครงงานให้ระบุว่าเป็นการแปลงไฟฟ้าจาก Dynamo เป็น Power Bank</li>
             <li>เพิ่มรายละเอียดวิธีการทำงานของ Dynamo ในการส่งไฟฟ้าไปให้ Battery</li>
             <li>อธิบายการหมุนแม่เหล็กและขดลวด ในการแปลงพลังงาน</li>
-            <li>เพิ่มบทบาท Control Circuit ในการควบคุมแรงดันไฟฟ้า</li>
-            <li>เพิ่มลิงก์ Instagram ของสมาชิกทีมทั้งหมด (nexqan, t_eatremiyamura, basicbeingbasic)</li>
+            <li>เพิ่มบทบาทหน้าที่ในงาน</li>
+            <li>เพิ่มลิงก์ Instagram สำหรับหัวหน้างาน (nexqan)</li>
+            <li>เพิ่มลิงก์ Instagram สำหรับสมาชิกที่ 2 (t_eatremiyamura)</li>
+            <li>เพิ่มลิงก์ Instagram สำหรับสมาชิกที่ 3 (basicbeingbasic)</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Update Item 3 -->
+    <!-- Update Item 2 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">24 มกราคม 2026</span>
@@ -463,7 +445,7 @@
       </div>
     </div>
 
-    <!-- Update Item 4 -->
+    <!-- Update Item 3 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">23 มกราคม 2026</span>
@@ -482,7 +464,7 @@
       </div>
     </div>
 
-    <!-- Update Item 5 -->
+    <!-- Update Item 4 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">22 มกราคม 2026</span>
@@ -615,6 +597,34 @@
   function toggleChangelog(element) {
     element.classList.toggle("active");
   }
+
+  // ป้องกันการคลิกขวา
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('⚠️ ห้ามคลิกขวา! กรุณาเคารพผลงานของผู้จัดทำ');
+  });
+
+  // ป้องกัน keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    // ป้องกัน F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'u') ||
+        (e.ctrlKey && e.key === 's')) {
+      e.preventDefault();
+      alert('⚠️ ฟังก์ชันนี้ถูกปิดการใช้งาน!');
+    }
+  });
+
+  // ป้องกัน text selection และ copy
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    alert('⚠️ ห้ามคัดลอก! กรุณาเคารพผลงานของผู้จัดทำ');
+  });
 </script>
 
 </body>
