@@ -219,6 +219,109 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
+    /* ===== สไตล์ Changelog Container ===== */
+    .changelog-container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* ===== สไตล์ Changelog Item ===== */
+    .changelog-item {
+      background: #f9fafb;
+      border-left: 4px solid #2563eb;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .changelog-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateX(5px);
+    }
+
+    /* ===== สไตล์หัวข้อ Changelog ที่สามารถกดได้ ===== */
+    .changelog-header {
+      padding: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .changelog-header:hover {
+      background: #f3f4f6;
+    }
+
+    /* ===== สไตล์วันที่ใน Changelog ===== */
+    .changelog-date {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2563eb;
+      margin-right: 15px;
+      min-width: 120px;
+    }
+
+    /* ===== สไตล์ชื่อ Update ===== */
+    .changelog-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #2d3542;
+      flex: 1;
+    }
+
+    /* ===== สไตล์ลูกศร Toggle ===== */
+    .changelog-arrow {
+      color: #2563eb;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+      font-weight: bold;
+    }
+
+    .changelog-item.active .changelog-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* ===== สไตล์รายละเอียด Changelog ===== */
+    .changelog-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #f9fafb;
+    }
+
+    .changelog-item.active .changelog-content {
+      max-height: 500px;
+    }
+
+    /* ===== สไตล์ข้อความในรายละเอียด ===== */
+    .changelog-details {
+      padding: 20px;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+
+    .changelog-details ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .changelog-details li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+    }
+
+    .changelog-details li:before {
+      content: "✓ ";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
   </style>
 </head>
 <body>
@@ -254,25 +357,25 @@
 
 <!-- ===== Section ขั้นตอนการดำเนินงาน ===== -->
 <section id="process">
-  <h2>ขั้นตอนการดำเนินงาน</h2>
+  <h2>ขั้นตอนการดำเนินงานตามหลัก STEM</h2>
   <ol>
-    <li><strong>ศึกษาข้อมูล</strong> - ค้นคว้าและรวบรวมข้อมูลที่เกี่ยวข้อง</li>
+    <li><strong>ศึกษา</strong> - ค้นคว้าและรวบรวมข้อมูลที่เกี่ยวข้อง</li>
     <li><strong>วางแผน</strong> - กำหนดเป้าหมายและออกแบบการดำเนินงาน</li>
-    <li><strong>ลงมือทำ</strong> - สร้างโครงงานตามแบบที่วางแผนไว้</li>
-    <li><strong>สรุปผล</strong> - ประเมินผลและสรุปการเรียนรู้</li>
+    <li><strong>ทำ</strong> - สร้างโครงงานตามแบบที่วางแผนไว้</li>
+    <li><strong>สรุป</strong> - ประเมินผลและสรุปการเรียนรู้</li>
   </ol>
 </section>
 
 <!-- ===== Section ผลลัพธ์ที่ได้ ===== -->
 <section id="result">
-  <h2>ผลลัพธ์ที่ได้</h2>
-  <p>จากการดำเนินงานโครงงาน STEM นี้ เราได้ได้รับประสบการณ์ที่มีค่า และสามารถสร้างสิ่งที่มีประโยชน์</p>
-  <p>ผลลัพธ์ของโครงงานได้รับการตรวจสอบและยืนยันโดยครูที่ปรึกษา</p>
+  <h2>gallery</h2>
+  <p>ภาพการทำงาน kub!</p>
+  <p>Comming Soon!</p>
 </section>
 
-<!-- ===== Section ผู้จัดทำ ===== -->
+<!-- ===== Section ผู้จัดทำและทีมงาน ===== -->
 <section id="contact">
-  <h2>ผู้จัดทำ</h2>
+  <h2>ผู้จัดทำและทีมงาน</h2>
   
   <div class="contact-container">
     <!-- ข้อมูลทางซ้าย -->
@@ -281,9 +384,17 @@
       <p><strong>โรงเรียน:</strong> โรงเรียนฤทธิยะวรรณาลัย</p>
       <p><strong>เว็บไซต์โรงเรียน:</strong> <a href="https://www.rittiya.ac.th/" target="_blank">website โรงเรียนที่กำลังศึกษา</a></p>
     </div>
-
+    
     <!-- รูปภาพทางขวา -->
     <img src="IMG_5903.JPG" alt="รูปผู้จัดทำ" class="pic">
+
+    <div> 
+      <p>ทีมงาน(เพื่อนร่วมทีม) ที่ช่วยในการพัฒนาโครงงานนี้</p>
+      <p>1.นาย ณภัทร เหมมะลา ชั้นมัธยมศึกษาปีที่ 3 เลขที่ 6 (หน้าที่หัวหน้างานที่ทำแทบทุกอย่าง)</p>
+      <p>2.ด.ย จิรภัทร์ หวายมอย ชั้นมัธยมศึกษาปีที่ 3 เลขที่ 3 (หน้าที่ทำงานเกียวกับไฟฟ้า)</p>
+      <p>3.ด.ญ รัฐกานต์ กาฬภักดี ชั้นมัธยมศึกษาปีที่ 3 เลขที่ 26 (หน้าที่ช่วยทำ 3d print)</p>
+      
+    </div>
 
   </div>
 </section>
@@ -291,8 +402,86 @@
 <!-- ===== Section รายการ Update website ===== -->
 <section id="Update">
   <h2>รายการ Update website!</h2>
-  <p>รายการ Update website</p>
-  <p>coming soon kub!</p>
+  
+  <div class="changelog-container">
+    <!-- Update Item 1 -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
+        <span class="changelog-date">25 มกราคม 2026</span>
+        <span class="changelog-title">เพิ่มระบบรายการ Update แบบเด็งรายละเอียด</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่เพิ่มเข้ามา:</strong></p>
+          <ul>
+            <li>เพิ่มระบบรายการ Update ที่สามารถกดเด็งรายละเอียดได้</li>
+            <li>ออกแบบให้ดูเหมือนเกมธรรมชาติและสวยงาม</li>
+            <li>เพิ่ม Animation เมื่อกดเด็งรายละเอียด</li>
+            <li>ใช้วันที่ (date) แทนหมายเลขเวอร์ชัน</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Item 2 -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
+        <span class="changelog-date">24 มกราคม 2026</span>
+        <span class="changelog-title">แก้ไขเอฟเฟกต์ Navigation และเพิ่ม Transition</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่เปลี่ยนแปลง:</strong></p>
+          <ul>
+            <li>ปรับปรุง Animation ของปุ่ม Navigation</li>
+            <li>เพิ่ม Transition effect เมื่อเปลี่ยน Section</li>
+            <li>ทำให้ Navigation sticky (ติดด้านบนเสมอ)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Item 3 -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
+        <span class="changelog-date">23 มกราคม 2026</span>
+        <span class="changelog-title">ปรับปรุง Layout และเพิ่มรูปภาพ Profile</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่ปรับปรุง:</strong></p>
+          <ul>
+            <li>จัดแต่ง Layout ของหน้า Contact ให้สวยงามมากขึ้น</li>
+            <li>เพิ่มรูปภาพ Profile ของผู้จัดทำ</li>
+            <li>เพิ่มข้อมูลรายละเอียดของทีมงาน</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Item 4 -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
+        <span class="changelog-date">22 มกราคม 2026</span>
+        <span class="changelog-title">สร้างเว็บไซต์เบื้องต้น</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่สร้าง:</strong></p>
+          <ul>
+            <li>สร้าง HTML Structure หลัก</li>
+            <li>ออกแบบ Header ด้วย Animation RGB</li>
+            <li>เพิ่ม Navigation Menu ทั้ง 6 หน้า</li>
+            <li>ตั้งค่า CSS พื้นฐานและ Styling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ===== JavaScript สำหรับจัดการการเปลี่ยน Tab ===== -->
@@ -309,6 +498,11 @@
     // เพิ่ม active class ให้ section และปุ่มที่เลือก
     document.getElementById(tabId).classList.add("active");
     element.classList.add("active");
+  }
+
+  // ฟังก์ชันสำหรับเด็งรายละเอียด Changelog
+  function toggleChangelog(element) {
+    element.classList.toggle("active");
   }
 </script>
 
