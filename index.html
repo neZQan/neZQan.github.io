@@ -337,6 +337,8 @@
 <nav>
   <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
   <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน แบต yuk</button>
+  <button class="tab" onclick="openTab('objective', this)">เป้าหมาย / Objective</button>
+  <button class="tab" onclick="openTab('concept', this)">แนวคิดการพัฒนานวัตกรรม (Conceptual framework)</button>
   <button class="tab" onclick="openTab('process', this)">ขั้นตอนและวิธีการ</button>
   <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
   <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำและทีมงาน</button>
@@ -354,6 +356,30 @@
   <h2>เกี่ยวกับโครงงาน แบต yuk</h2>
   <p>โครงงานนี้เป็นการพัฒนาระบบแปลงไฟฟ้าจาก Dynamo เป็น Power Bank โดยมีวัตถุประสงค์เพื่อสร้างสรรค์แหล่งพลังงานสะอาดและเชื่อถือได้จากการหมุน dynamo ที่สามารถนำไปใช้ชาร์จอุปกรณ์อิเล็กทรอนิกส์ได้</p>
   <p><strong>วิธีการทำงาน:</strong> Dynamo จะทำการแปลงพลังงานกล (จากการหมุน) เป็นพลังงานไฟฟ้าผ่านการหมุนของแม่เหล็กและขดลวด จากนั้นไฟฟ้าที่เกิดขึ้นจะถูกส่งไปยัง Control Circuit ที่จะควบคุมความเสถียรของแรงดันไฟฟ้า เพื่อให้ Power Bank สามารถเก็บพลังงานได้อย่างปลอดภัยและมีประสิทธิภาพสูงสุด</p>
+</section>
+
+<!-- ===== Section เป้าหมาย / Objective ===== -->
+<section id="objective">
+  <h2>เป้าหมาย / Objective</h2>
+  <ul>
+    <li>สร้างต้นแบบระบบแปลงไฟฟ้าจาก Dynamo ให้สามารถชาร์จ Power Bank ได้จริงในภาคสนาม</li>
+    <li>ลดการพึ่งพาไฟบ้าน ด้วยการใช้พลังงานกลจากการหมุน/ปั่นเพื่อผลิตไฟฟ้า</li>
+    <li>ออกแบบวงจรควบคุมแรงดัน (Control Circuit) ให้จ่ายไฟเสถียร ปลอดภัยต่อแบตเตอรี่</li>
+    <li>ทดสอบประสิทธิภาพการชาร์จ (แรงดัน/กระแส/เวลา) และบันทึกผลเพื่อปรับปรุงรุ่นถัดไป</li>
+    <li>เผยแพร่ความรู้การประดิษฐ์ให้เพื่อนๆ สามารถทำซ้ำและต่อยอดได้</li>
+  </ul>
+</section>
+
+<!-- ===== Section แนวคิดการพัฒนานวัตกรรม (Conceptual framework) ===== -->
+<section id="concept">
+  <h2>แนวคิดการพัฒนานวัตกรรม (Conceptual framework)</h2>
+  <ul>
+    <li>ใช้การแปลงพลังงานกลจาก Dynamo เป็นไฟฟ้ากระแสตรง แล้วผ่านวงจรควบคุมเพื่อชาร์จแบตเตอรี่</li>
+    <li>ออกแบบลำดับโมดูล: แหล่งพลังงานกล (ปั่น/หมุน) → Dynamo → Rectifier/Regulator → Power Bank</li>
+    <li>เน้นความปลอดภัยของแบตเตอรี่ ด้วยการควบคุมแรงดันและกระแสให้อยู่ในช่วงที่ปลอดภัย</li>
+    <li>ทดสอบและวัดผลด้านแรงดัน กระแส เวลา และอุณหภูมิ เพื่อปรับปรุงประสิทธิภาพ</li>
+    <li>วางแนวทางต่อยอด เช่น เพิ่มตัวเก็บประจุ หรือตัวปรับรอบ เพื่อเพิ่มเสถียรภาพและประสิทธิภาพ</li>
+  </ul>
 </section>
 
 <!-- ===== Section ขั้นตอนการดำเนินงาน ===== -->
@@ -405,6 +431,45 @@
     <!-- Update Item 1 (Latest) -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
+        <span class="changelog-date">27 มกราคม 2026</span>
+        <span class="changelog-title">เพิ่มเมนูและหน้าแนวคิดการพัฒนานวัตกรรม (Conceptual framework)</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่เพิ่มเข้ามา:</strong></p>
+          <ul>
+            <li>เพิ่มปุ่มนำทาง "แนวคิดการพัฒนานวัตกรรม (Conceptual framework)" ในแถบเมนู</li>
+            <li>สร้างหน้า Conceptual framework อธิบายลำดับโมดูล: แหล่งพลังงานกล → Dynamo → Rectifier/Regulator → Power Bank</li>
+            <li>ระบุแนวคิดด้านความปลอดภัยและการควบคุมแรงดัน/กระแส สำหรับการชาร์จแบตเตอรี่</li>
+            <li>ชี้แนะแนวทางทดสอบและต่อยอด เพิ่มเสถียรภาพและประสิทธิภาพ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Item 1 (Latest) -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
+        <span class="changelog-date">27 มกราคม 2026</span>
+        <span class="changelog-title">เพิ่มเมนูและหน้าเป้าหมาย (Objective)</span>
+        <span class="changelog-arrow">▼</span>
+      </div>
+      <div class="changelog-content">
+        <div class="changelog-details">
+          <p><strong>สิ่งที่เพิ่มเข้ามา:</strong></p>
+          <ul>
+            <li>เพิ่มปุ่มนำทาง "เป้าหมาย / Objective" ในแถบเมนู</li>
+            <li>สร้างหน้า Objective อธิบายเป้าหมาย โครงสร้างวงจร และการทดสอบ</li>
+            <li>รวบรวมจุดมุ่งหมายหลัก: ชาร์จ Power Bank จาก Dynamo, ลดการพึ่งพาไฟบ้าน, ควบคุมแรงดันให้ปลอดภัย</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Item 2 -->
+    <div class="changelog-item" onclick="toggleChangelog(this)">
+      <div class="changelog-header">
         <span class="changelog-date">25 มกราคม 2026</span>
         <span class="changelog-title">แก้ไขเนื้อหาโครงงาน และเพิ่มลิงก์ IG ทีม</span>
         <span class="changelog-arrow">▼</span>
@@ -425,7 +490,7 @@
       </div>
     </div>
 
-    <!-- Update Item 2 -->
+    <!-- Update Item 3 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">24 มกราคม 2026</span>
@@ -445,7 +510,7 @@
       </div>
     </div>
 
-    <!-- Update Item 3 -->
+    <!-- Update Item 4 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">23 มกราคม 2026</span>
@@ -464,7 +529,7 @@
       </div>
     </div>
 
-    <!-- Update Item 4 -->
+    <!-- Update Item 5 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">22 มกราคม 2026</span>
@@ -484,7 +549,7 @@
       </div>
     </div>
 
-    <!-- Update Item 5 -->
+    <!-- Update Item 6 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">21 มกราคม 2026</span>
@@ -503,7 +568,7 @@
       </div>
     </div>
 
-    <!-- Update Item 6 -->
+    <!-- Update Item 7 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">20 มกราคม 2026</span>
@@ -522,7 +587,7 @@
       </div>
     </div>
 
-    <!-- Update Item 7 -->
+    <!-- Update Item 8 -->
     <div class="changelog-item" onclick="toggleChangelog(this)">
       <div class="changelog-header">
         <span class="changelog-date">19 มกราคม 2026</span>
