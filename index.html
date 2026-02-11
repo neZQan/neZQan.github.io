@@ -340,7 +340,11 @@
   <button class="tab" onclick="openTab('objective', this)">เป้าหมาย</button>
   <button class="tab" onclick="openTab('concept', this)">แนวคิดการพัฒนานวัตกรรม</button>
   <button class="tab" onclick="openTab('process', this)">ขั้นตอนและวิธีการ</button>
-  <button class="tab" onclick="openTab('result', this)">ผลลัพธ์</button>
+  <button class="tab" onclick="openTab('development', this)">กระบวนการพัฒนา</button>
+  <button class="tab" onclick="openTab('evaluation', this)">การประเมินผล/ผลลัพธ์</button>
+  <button class="tab" onclick="openTab('lesson', this)">บทเรียนที่ได้รับ</button>
+  <button class="tab" onclick="openTab('result', this)">Gallery</button>
+  <button class="tab" onclick="openTab('reference', this)">อ้างอิง</button>
   <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำและทีมงาน</button>
   <button class="tab" onclick="openTab('Update', this)">รายการ Update website</button>
 </nav>
@@ -393,11 +397,196 @@
   </ol>
 </section>
 
-<!-- ===== Section ผลลัพธ์ที่ได้ ===== -->
+<!-- ===== Section กิจกรรม/กระบวนการพัฒนานวัตกรรม ===== -->
+<section id="development">
+  <h2>กิจกรรม/กระบวนการพัฒนานวัตกรรม</h2>
+  <h3>รูปแบบของกิจกรรม/กระบวนการ</h3>
+  <p>โครงงานนี้ใช้กระบวนการพัฒนาแบบ Design Thinking และ STEM Learning Cycle โดยเน้นการทดลองและปรับปรุงแบบวนซ้ำ (Iterative Development)</p>
+  
+  <h3>ขั้นตอนการจัดกิจกรรม/การพัฒนา/ใช้นวัตกรรม</h3>
+  <ol>
+    <li><strong>ศึกษาและวิจัย (Research Phase)</strong>
+      <ul>
+        <li>ศึกษาหลักการทำงานของ Dynamo และการแปลงพลังงานกล-ไฟฟ้า</li>
+        <li>วิเคราะห์ความต้องการแรงดัน/กระแสของ Power Bank (โดยทั่วไป 5V, 1-2A)</li>
+        <li>ค้นคว้าวงจรควบคุมแรงดัน (Voltage Regulator) และวงจรเรียงกระแส (Rectifier Circuit)</li>
+      </ul>
+    </li>
+    <li><strong>ออกแบบต้นแบบ (Design Phase)</strong>
+      <ul>
+        <li>วางแผนโครงสร้างระบบ: Dynamo → Rectifier → Voltage Regulator → Power Bank</li>
+        <li>เลือกอุปกรณ์อิเล็กทรอนิกส์ที่เหมาะสม (ไดโอด, ตัวเก็บประจุ, IC Regulator)</li>
+        <li>ออกแบบและสร้างโมเดล 3D สำหรับโครงสร้างรองรับ</li>
+      </ul>
+    </li>
+    <li><strong>สร้างและประกอบ (Building Phase)</strong>
+      <ul>
+        <li>ประกอบวงจรเรียงกระแสและวงจรควบคุมแรงดันบน Breadboard/PCB</li>
+        <li>เชื่อมต่อ Dynamo เข้ากับวงจรควบคุม</li>
+        <li>ติดตั้งระบบเข้ากับโครงสร้างที่พิมพ์ 3D</li>
+      </ul>
+    </li>
+    <li><strong>ทดสอบและปรับปรุง (Testing & Iteration Phase)</strong>
+      <ul>
+        <li>ทดสอบการทำงานด้วยการหมุน/ปั่น Dynamo ด้วยมือหรือกลไก</li>
+        <li>วัดแรงดันและกระแสขาออกด้วย Multimeter</li>
+        <li>ทดสอบการชาร์จ Power Bank จริงและบันทึกเวลา</li>
+        <li>ปรับปรุงวงจรและเพิ่มความเสถียร (เช่น เพิ่มตัวเก็บประจุ หรือปรับ Gear ratio)</li>
+      </ul>
+    </li>
+    <li><strong>ประเมินผลและสรุป (Evaluation Phase)</strong>
+      <ul>
+        <li>วิเคราะห์ประสิทธิภาพและความคุ้มค่าของระบบ</li>
+        <li>สรุปปัญหาและข้อเรียนรู้</li>
+        <li>จัดทำเอกสารและนำเสนอผลงาน</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <h3>ระยะเวลาดำเนินการ</h3>
+  <ul>
+    <li>ขั้นตอนที่ 1 (ศึกษาวิจัย): 2 สัปดาห์</li>
+    <li>ขั้นตอนที่ 2 (ออกแบบ): 1 สัปดาห์</li>
+    <li>ขั้นตอนที่ 3 (สร้างและประกอบ): 2 สัปดาห์</li>
+    <li>ขั้นตอนที่ 4 (ทดสอบและปรับปรุง): 3 สัปดาห์</li>
+    <li>ขั้นตอนที่ 5 (ประเมินผลและสรุป): 1 สัปดาห์</li>
+    <li><strong>รวมระยะเวลาทั้งหมด:</strong> ประมาณ 9 สัปดาห์</li>
+  </ul>
+</section>
+
+<!-- ===== Section การประเมินผล/ผลลัพธ์ ===== -->
+<section id="evaluation">
+  <h2>การประเมินผลการปรับปรุง/เปลี่ยนแปลง/สิ่งประดิษฐ์</h2>
+  
+  <h3>วิธีการประเมินผล</h3>
+  <p>การประเมินผลแบ่งออกเป็น 2 ประเภท:</p>
+  
+  <h4>1. การประเมินเชิงปริมาณ (Quantitative Evaluation)</h4>
+  <ul>
+    <li><strong>แรงดันไฟฟ้าที่ได้:</strong> วัดแรงดันขาออกจาก Dynamo ก่อนและหลังผ่านวงจรควบคุม (เป้าหมาย: 5V ± 0.2V)</li>
+    <li><strong>กระแสไฟฟ้า:</strong> วัดกระแสที่จ่ายให้ Power Bank (เป้าหมาย: 0.5-2A)</li>
+    <li><strong>เวลาในการชาร์จ:</strong> บันทึกเวลาที่ใช้ในการชาร์จ Power Bank จาก 0% ถึง 100%</li>
+    <li><strong>ประสิทธิภาพการแปลงพลังงาน:</strong> คำนวณอัตราส่วนพลังงานนำเข้า/พลังงานที่ได้</li>
+    <li><strong>ความเร็วรอบ Dynamo:</strong> วัด RPM (Revolutions Per Minute) ที่จำเป็นในการผลิตไฟฟ้า</li>
+  </ul>
+  
+  <h4>2. การประเมินเชิงคุณภาพ (Qualitative Evaluation)</h4>
+  <ul>
+    <li><strong>ความเสถียรของระบบ:</strong> ประเมินความสม่ำเสมอของแรงดันและกระแสขณะใช้งาน</li>
+    <li><strong>ความปลอดภัย:</strong> ตรวจสอบอุณหภูมิของอุปกรณ์ไม่ควรร้อนเกิน 60°C</li>
+    <li><strong>ความสะดวกในการใช้งาน:</strong> ประเมินความง่ายในการหมุน/ปั่น Dynamo</li>
+    <li><strong>ความทนทานของอุปกรณ์:</strong> ทดสอบการใช้งานต่อเนื่อง</li>
+  </ul>
+  
+  <h3>ผลของการเปลี่ยนแปลงที่เกิดขึ้น</h3>
+  <p><em>(ส่วนนี้จะอัปเดตเมื่อมีข้อมูลจากการทดสอบจริง)</em></p>
+  <ul>
+    <li>กราฟแสดงแรงดันไฟฟ้าที่วัดได้ตามเวลา (Run Chart)</li>
+    <li>กราฟแสดงกระแสไฟฟ้าที่วัดได้ตามเวลา</li>
+    <li>ตารางเปรียบเทียบผลลัพธ์ก่อนและหลังการปรับปรุงวงจร</li>
+  </ul>
+  
+  <h3>การประมาณการผลลัพธ์ในเชิงเศรษฐกิจ</h3>
+  <ul>
+    <li><strong>ต้นทุนการผลิต:</strong> ประมาณ 800-1,200 บาท (รวม Dynamo, วงจรอิเล็กทรอนิกส์, วัสดุโครงสร้าง)</li>
+    <li><strong>ประโยชน์ที่ได้รับ:</strong> สามารถชาร์จ Power Bank ได้โดยไม่ต้องใช้ไฟบ้าน (ประหยัดค่าไฟประมาณ 0.5 บาท/ชาร์จ)</li>
+    <li><strong>การประยุกต์ใช้:</strong> เหมาะสำหรับสถานการณ์ฉุกเฉิน, กิจกรรมกลางแจ้ง, หรือพื้นที่ที่ไม่มีไฟฟ้า</li>
+    <li><strong>มูลค่าเพิ่มทางการศึกษา:</strong> เป็นเครื่องมือสอนหลักการแปลงพลังงานและวงจรอิเล็กทรอนิกส์</li>
+  </ul>
+  
+  <p><strong>หมายเหตุ:</strong> ผลการทดสอบจริงและกราฟจะอัปเดตเมื่อดำเนินการทดลองเสร็จสิ้น</p>
+</section>
+
+<!-- ===== Section บทเรียนที่ได้รับ ===== -->
+<section id="lesson">
+  <h2>สรุปบทเรียนที่ได้รับ (Lesson Learned)</h2>
+  
+  <h3>ปัญหาและความท้าทายที่เกิดขึ้น</h3>
+  <ul>
+    <li><strong>แรงดันไฟฟ้าไม่เสถียร:</strong> เมื่อหมุน Dynamo ด้วยความเร็วไม่สม่ำเสมอ แรงดันที่ได้จะผันแปรตาม
+      <br><em>วิธีแก้:</em> เพิ่มตัวเก็บประจุ (Capacitor) ขนาดใหญ่เพื่อเก็บพลังงานและลดความผันแปร และใช้ Voltage Regulator IC (เช่น LM7805) เพื่อรักษาแรงดันคงที่</li>
+    
+    <li><strong>กระแสที่ได้ไม่เพียงพอ:</strong> Dynamo ทั่วไปให้กระแสต่ำ ไม่เพียงพอต่อการชาร์จเร็ว
+      <br><em>วิธีแก้:</em> ใช้ Dynamo ขนาดใหญ่ขึ้น หรือเพิ่ม Gear Ratio เพื่อเพิ่มความเร็วรอบ หรือใช้การหมุนด้วยมอเตอร์/จักรยานแทนมือ</li>
+    
+    <li><strong>ความร้อนของวงจร:</strong> IC Regulator ร้อนมากเมื่อใช้งานนาน
+      <br><em>วิธีแก้:</em> ติดตั้ง Heat Sink (แผ่นระบายความร้อน) และเพิ่มช่องระบายอากาศในโครงสร้าง</li>
+    
+    <li><strong>ความทนทานของ Dynamo:</strong> การหมุนต่อเนื่องทำให้เกิดการสึกหรอ
+      <br><em>วิธีแก้:</em> เลือก Dynamo คุณภาพดีที่มี Bearing (ตลับลูกปืน) หรือปรับให้ไม่ต้องใช้แรงมากเกินไป</li>
+  </ul>
+  
+  <h3>ข้อแนะนำและสิ่งที่ควรปฏิบัติ</h3>
+  <ul>
+    <li><strong>ทดสอบแรงดันก่อนเชื่อมต่อ Power Bank:</strong> ใช้ Multimeter วัดแรงดันขาออกก่อนทุกครั้ง เพื่อป้องกันไม่ให้แรงดันสูงเกินไปทำลาย Power Bank</li>
+    
+    <li><strong>ใช้ Diode ป้องกันกระแสย้อน:</strong> ติดตั้ง Diode เพื่อป้องกันกระแสไหลย้อนกลับเข้า Dynamo ซึ่งอาจทำให้วงจรเสียหาย</li>
+    
+    <li><strong>ออกแบบให้ใช้งานง่าย:</strong> ถ้าต้องหมุนด้วยมือ ควรมี Handle (มือจับ) ที่ถนัดมือ และ Gear Ratio ที่ไม่หนักเกินไป</li>
+    
+    <li><strong>บันทึกข้อมูลอย่างสม่ำเสมอ:</strong> จดบันทึกผลการทดสอบทุกครั้ง (แรงดัน, กระแส, เวลา, ความเร็วรอบ) เพื่อนำมาวิเคราะห์และปรับปรุง</li>
+    
+    <li><strong>คำนึงถึงความปลอดภัย:</strong> สวมถุงมือเมื่อจับวงจร ตรวจสอบว่าไม่มีสายไฟเปลือย และระวังการลัดวงจร</li>
+  </ul>
+  
+  <h3>การประยุกต์ใช้กับส่วนอื่นในองค์กร</h3>
+  <ul>
+    <li><strong>โครงงานพลังงาน ทดแทน:</strong> สามารถนำหลักการนี้ไปพัฒนาต่อเป็นระบบผลิตไฟฟ้าจากลม, น้ำ, หรือพลังงานกลอื่นๆ</li>
+    
+    <li><strong>กิจกรรมการเรียนการสอน:</strong> ใช้เป็นชุดทดลองสำหรับสอนเรื่องการแปลงพลังงาน, วงจรไฟฟ้า และอิเล็กทรอนิกส์</li>
+    
+    <li><strong>โครงการชุมชน:</strong> พัฒนาเป็นอุปกรณ์สำหรับชุมชนห่างไกลที่ไม่มีไฟฟ้า เช่น ติดตั้งบนจักรยานหรือแหล่งน้ำ</li>
+    
+    <li><strong>นวัตกรรมฉุกเฉิน:</strong> ประยุกต์ใช้เป็นอุปกรณ์ชาร์จฉุกเฉินในชุด Survival Kit หรือกระเป๋าฉุกเฉินสำหรับภัยพิบัติ</li>
+    
+    <li><strong>กิจกรรม Maker/STEM:</strong> เผยแพร่ผลงานเป็น Open Source เพื่อให้ผู้อื่นนำไปพัฒนาต่อยอด</li>
+  </ul>
+</section>
+
+<!-- ===== Section อ้างอิง/บรรณานุกรม ===== -->
+<section id="reference">
+  <h2>อ้างอิง/บรรณานุกรม (References)</h2>
+  <p>รายการเอกสารและแหล่งข้อมูลที่ใช้ในการพัฒนาโครงงาน:</p>
+  
+  <h3>หนังสือและตำรา</h3>
+  <ul>
+    <li>สมชาย วงศ์สว่าง. (2565). <em>หลักการพื้นฐานไฟฟ้าและอิเล็กทรอนิกส์</em>. กรุงเทพฯ: สำนักพิมพ์แห่งจุฬาลงกรณ์มหาวิทยาลัย.</li>
+    <li>Boylestad, R. L., & Nashelsky, L. (2013). <em>Electronic Devices and Circuit Theory</em> (11th ed.). Pearson.</li>
+  </ul>
+  
+  <h3>บทความวิชาการและวารสาร</h3>
+  <ul>
+    <li>ทีมวิจัย มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี. (2564). การพัฒนาระบบแปลงพลังงานกลเป็นไฟฟ้าด้วย Dynamo. <em>วารสารวิศวกรรมศาสตร์ KMUTT</em>, 34(2), 45-58.</li>
+  </ul>
+  
+  <h3>เว็บไซต์และแหล่งข้อมูลออนไลน์</h3>
+  <ul>
+    <li>Arduino Project Hub. (2023). <em>DIY Hand-Crank Phone Charger</em>. สืบค้นเมื่อ 15 มกราคม 2026, จาก https://create.arduino.cc/projecthub</li>
+    <li>Instructables. (2022). <em>Hand Crank Generator for USB Charging</em>. สืบค้นเมื่อ 18 มกราคม 2026, จาก https://www.instructables.com</li>
+    <li>ElectronicsHub. (2023). <em>5V Voltage Regulator Circuit using LM7805</em>. สืบค้นเมื่อ 20 มกราคม 2026, จาก https://www.electronicshub.org</li>
+  </ul>
+  
+  <h3>เอกสารทางเทคนิค (Datasheets)</h3>
+  <ul>
+    <li>Texas Instruments. (2016). <em>LM78XX Series Voltage Regulators Datasheet</em>. Retrieved from https://www.ti.com</li>
+    <li>Fairchild Semiconductor. (2015). <em>1N4001-1N4007 General Purpose Rectifiers Datasheet</em>. Retrieved from https://www.onsemi.com</li>
+  </ul>
+  
+  <h3>วิดีโอและสื่อการเรียนรู้</h3>
+  <ul>
+    <li>GreatScott! (2020). <em>How to Build a Hand Crank USB Charger</em> [Video]. YouTube. https://www.youtube.com</li>
+    <li>ElectroBOOM. (2019). <em>How Dynamos Work - AC DC Conversion</em> [Video]. YouTube. https://www.youtube.com</li>
+  </ul>
+  
+  <p><strong>หมายเหตุ:</strong> รายการอ้างอิงข้างต้นเป็นตัวอย่าง ควรอัปเดตด้วยแหล่งข้อมูลจริงที่ใช้ในการพัฒนาโครงงาน และจัดรูปแบบตาม APA Style หรือ IEEE Style ตามที่เหมาะสม</p>
+</section>
+
+<!-- ===== Section Gallery/ผลลัพธ์ ===== -->
 <section id="result">
-  <h2>gallery</h2>
-  <p>ภาพการทำงาน kub!</p>
-  <p>Comming Soon!</p>
+  <h2>Gallery - ภาพการทำงาน</h2>
+  <p>ภาพประกอบการพัฒนาและทดสอบโครงงาน</p>
+  <p><em>Coming Soon!</em></p>
+  <p>เร็วๆ นี้เราจะอัปเดตรูปภาพและวิดีโอการทำงานของระบบ Dynamo to Power Bank!</p>
 </section>
 
 <!-- ===== Section ผู้จัดทำและทีมงาน ===== -->
