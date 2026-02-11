@@ -75,6 +75,7 @@
     /* ===== สไตล์แถบ Navigation ===== */
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background: #ffffff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -82,6 +83,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      padding: 5px 10px;
     }
 
     /* ===== สไตล์ปุ่ม Navigation ===== */
@@ -89,14 +91,22 @@
       background: none;
       border: none;
       color: #2d3542;
-      padding: 16px 24px;
+      padding: 10px 16px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       /* ให้การเปลี่ยนแปลงนุ่มนวล */
       transition: all 0.3s ease;
       border-bottom: 3px solid transparent;
       position: relative;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 768px) {
+      nav button {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
     }
 
     /* ===== เอฟเฟกต์เมื่อ Hover ปุ่ม ===== */
@@ -391,17 +401,17 @@
 <!-- ===== Navigation Menu ===== -->
 <nav>
   <button class="tab active" onclick="openTab('home', this)">หน้าแรก</button>
-  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับโครงงาน แบต yuk</button>
+  <button class="tab" onclick="openTab('about', this)">เกี่ยวกับ</button>
   <button class="tab" onclick="openTab('objective', this)">เป้าหมาย</button>
-  <button class="tab" onclick="openTab('concept', this)">แนวคิดการพัฒนานวัตกรรม</button>
-  <button class="tab" onclick="openTab('process', this)">ขั้นตอนและวิธีการ</button>
-  <button class="tab" onclick="openTab('development', this)">กระบวนการพัฒนา</button>
-  <button class="tab" onclick="openTab('evaluation', this)">การประเมินผล/ผลลัพธ์</button>
-  <button class="tab" onclick="openTab('lesson', this)">บทเรียนที่ได้รับ</button>
+  <button class="tab" onclick="openTab('concept', this)">แนวคิด</button>
+  <button class="tab" onclick="openTab('process', this)">ขั้นตอน</button>
+  <button class="tab" onclick="openTab('development', this)">กระบวนการ</button>
+  <button class="tab" onclick="openTab('evaluation', this)">ประเมินผล</button>
+  <button class="tab" onclick="openTab('lesson', this)">บทเรียน</button>
   <button class="tab" onclick="openTab('result', this)">Gallery</button>
   <button class="tab" onclick="openTab('reference', this)">อ้างอิง</button>
-  <button class="tab" onclick="openTab('contact', this)">ผู้จัดทำและทีมงาน</button>
-  <button class="tab" onclick="openTab('Update', this)">รายการ Update website</button>
+  <button class="tab" onclick="openTab('contact', this)">ทีมงาน</button>
+  <button class="tab" onclick="openTab('Update', this)">Updates</button>
 </nav>
 
 <!-- ===== Section หน้าแรก ===== -->
