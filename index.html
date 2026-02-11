@@ -322,6 +322,61 @@
       margin-right: 8px;
     }
 
+    /* ===== สไตล์ Lightbox Modal ===== */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .lightbox-close:hover {
+      color: #2563eb;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.5); }
+      to { transform: scale(1); }
+    }
+
+    /* ===== สไตล์รูปภาพที่คลิกได้ ===== */
+    .gallery-img {
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -653,28 +708,28 @@
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
     
     <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="DSC05962.JPG" alt="ภาพโครงงาน 1" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+      <img src="DSC05962.JPG" alt="ภาพโครงงาน 1" class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: 250px; object-fit: cover; display: block;">
       <div style="padding: 15px; background: white;">
         <p style="margin: 0; font-weight: 500; color: #2563eb;">ผอ. ขึ้นกล่าว</p>
       </div>
     </div>
     
     <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="DSC05995.JPG" alt="ภาพโครงงาน 2" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+      <img src="DSC05995.JPG" alt="ภาพโครงงาน 2" class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: 250px; object-fit: cover; display: block;">
       <div style="padding: 15px; background: white;">
         <p style="margin: 0; font-weight: 500; color: #2563eb;">นำเสนอให้ ผอ. ดู</p>
       </div>
     </div>
     
     <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="DSC06001.JPG" alt="ภาพโครงงาน 3" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+      <img src="DSC06001.JPG" alt="ภาพโครงงาน 3" class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: 250px; object-fit: cover; display: block;">
       <div style="padding: 15px; background: white;">
         <p style="margin: 0; font-weight: 500; color: #2563eb;">นำเสนอให้ ผอ. ดู</p>
       </div>
     </div>
     
     <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      <img src="LINE_ALBUM_Stem_260121_56.jpg" alt="ภาพโครงงาน 4" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+      <img src="LINE_ALBUM_Stem_260121_56.jpg" alt="ภาพโครงงาน 4" class="gallery-img" onclick="openLightbox(this.src)" style="width: 100%; height: 250px; object-fit: cover; display: block;">
       <div style="padding: 15px; background: white;">
         <p style="margin: 0; font-weight: 500; color: #2563eb;">นำเสนอโครงงานและทีมงานพัฒนาโครงงาน</p>
       </div>
@@ -683,8 +738,14 @@
   </div>
   
   <p style="margin-top: 30px; text-align: center; color: #6b7280; font-style: italic;">
-    💡 คลิกรูปภาพเพื่อดูรายละเอียดเพิ่มเติม
+    💡 คลิกรูปภาพเพื่อดูขนาดใหญ่
   </p>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" onclick="event.stopPropagation()">
+  </div>
 </section>
 
 <!-- ===== Section ผู้จัดทำและทีมงาน ===== -->
@@ -940,6 +1001,20 @@
     element.classList.toggle("active");
   }
 
+  // ฟังก์ชันเปิด Lightbox
+  function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.classList.add('active');
+  }
+
+  // ฟังก์ชันปิด Lightbox
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+  }
+
   // ป้องกันการคลิกขวา
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -947,7 +1022,11 @@
 
   // ป้องกัน keyboard shortcuts
   document.addEventListener('keydown', function(e) {
-    // ป้องกัน F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S
+    // ปิด Lightbox เมื่อกด Escape
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+    // ป้องกัน F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+Shift+C
     if (e.key === 'F12' || 
         (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
         (e.ctrlKey && e.key === 'u') ||
